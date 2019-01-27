@@ -2,37 +2,27 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"log"
 	"net/http"
+	"os"
+	"time"
 
 	"github.com/gorilla/mux"
 )
 
 const (
-	PORT = ":8000"
+	port = ":8000"
 )
 
 func main() {
-	fmt.Println("Server is started at ", PORT)
+	fmt.Println("Server is started at ", port)
 	router := mux.NewRouter()
 	ConfigureRouting(router)
-
-	// populateSomeData()
-
-	//db
-	// to := []string{"sofikul.mallick786@gmail.com"}
-	// notification := Notification{"N1", to, "notification", "created"}
-	// CreateOne(&notification)
-	//var notifications []Notification
-	//notifications, _ = FindAll()
-
-	// find one
-	// notification1, _ := FindByID("5c4c6465eb3fb320bec0f751")
-	// log.Printf("Notification.. %+v\n", notification1)
-
-	// send mail
-	// SendMail(notification1)
-
-	log.Fatal(http.ListenAndServe(PORT, router))
-
+	//explore text template
+	Parse("example.txt", Notification{ID: "N90", Subject: "Test subject", Message: "Test body", Status: "Active", Senttime: time.Time{}})
+	f, _ := os.Open("example.txt")
+	io.Copy(os.Stdout, f)
+	f.Close()
+	log.Fatal(http.ListenAndServe(port, router))
 }
