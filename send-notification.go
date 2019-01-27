@@ -8,8 +8,8 @@ import (
 
 // SendMail - sends mail
 func SendMail(notification Notification) error {
-	username := "sofikul.mallick786@gmail.com"
-	password := "$sofiku2766"
+	username := "********"
+	password := "*********"
 	from := "no-reply@gmail.com"
 	to := notification.To
 	tostr := strings.Join(to, ",")
