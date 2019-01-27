@@ -17,8 +17,21 @@ func main() {
 	router := mux.NewRouter()
 	ConfigureRouting(router)
 
-	populateSomeData()
-	// setting rest end points
+	// populateSomeData()
+
+	//db
+	// to := []string{"sofikul.mallick786@gmail.com"}
+	// notification := Notification{"N1", to, "notification", "created"}
+	// CreateOne(&notification)
+	//var notifications []Notification
+	//notifications, _ = FindAll()
+
+	// find one
+	// notification1, _ := FindByID("5c4c6465eb3fb320bec0f751")
+	// log.Printf("Notification.. %+v\n", notification1)
+
+	// send mail
+	// SendMail(notification1)
 
 	log.Fatal(http.ListenAndServe(PORT, router))
 
