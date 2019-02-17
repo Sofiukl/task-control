@@ -10,7 +10,7 @@ import (
 /**dBurl - database URL
  */
 const (
-	dBurl                = "localhost:27017"
+	dBurl                = "192.168.99.100:27017"
 	notificationDatabase = "notificationdb"
 )
 

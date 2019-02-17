@@ -6,11 +6,14 @@ import (
 	"strings"
 )
 
+const (
+	username = "sofikul.mallick@yopmail.com"
+	password = ""
+	from     = "no-reply@gmail.com"
+)
+
 // SendMail - sends mail
 func SendMail(notification Notification) error {
-	username := "*********"
-	password := "*********"
-	from := "no-reply@gmail.com"
 	to := notification.To
 	tostr := strings.Join(to, ",")
 	subject := notification.Subject
@@ -35,9 +38,6 @@ func SendMail(notification Notification) error {
 
 // SendMailUsingTemplate - sends mail
 func SendMailUsingTemplate(notification Notification) error {
-	username := "**********"
-	password := "**********"
-	from := "no-reply@gmail.com"
 	to := notification.To
 	tostr := strings.Join(to, ",")
 	subject := notification.Subject
